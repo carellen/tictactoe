@@ -3,10 +3,12 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Tictactoe
-    = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
   %body
     .container
       = yield
+      - flash.each do |type, message|
+        = content_tag :h3, sanitize(message), class: "alert alert_#{type}"
