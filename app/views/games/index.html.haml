@@ -1,0 +1,34 @@
+.container
+  %div{:class => "spot col-left row-top #{@game.moves["1"]}", "data-moves" => "1"}
+    %h1#1
+      = @game.moves["1"]
+  %div{:class => "spot col-middle row-top #{@game.moves["2"]}", "data-moves" => "2"}
+    %h1#2
+      = @game.moves["2"]
+  %div{:class => "spot col-right row-top #{@game.moves["3"]}", "data-moves" => "3"}
+    %h1#3
+      = @game.moves["3"]
+  %br/
+  %div{:class => "spot col-left row-middle #{@game.moves["4"]}", "data-moves" => "4"}
+    %h1#4
+      = @game.moves["4"]
+  %div{:class => "spot col-middle row-middle #{@game.moves["5"]}", "data-moves" => "5"}
+    %h1#5
+      = @game.moves["5"]
+  %div{:class => "spot col-right row-middle #{@game.moves["6"]}", "data-moves" => "6"}
+    %h1#6
+      = @game.moves["6"]
+  %br/
+  %div{:class => "spot col-left row-bottom #{@game.moves["7"]}", "data-moves" => "7"}
+    %h1#7
+      = @game.moves["7"]
+  %div{:class => "spot col-middle row-bottom #{@game.moves["8"]}", "data-moves" => "8"}
+    %h1#8
+      = @game.moves["8"]
+  %div{:class => "spot col-right row-bottom #{@game.moves["9"]}", "data-moves" => "9"}
+    %h1#9
+      = @game.moves["9"]
+  %br/
+  = button_to 'New game', new_game_path, method: :get, class: 'btn btn-info'
+:javascript
+  window.currentPlayer = "#{@game.current_player}"
