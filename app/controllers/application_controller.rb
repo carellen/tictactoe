@@ -4,5 +4,6 @@ class ApplicationController < ActionController::Base
 
   def set_game
     @game = Game.new(session[:game])
+    @game.current_player = 'x'
   end
 end
